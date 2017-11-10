@@ -70,6 +70,7 @@ static void * const kMXScrollViewControllerKVOContext = (void*)&kMXScrollViewCon
     CGRect frame = self.scrollView.frame;
     frame.origin = CGPointZero;
     frame.size.height -= self.scrollView.parallaxHeader.minimumHeight;
+    frame.size.height -= CGRectGetHeight(self.tabBarController.tabBar.frame);
     self.childViewController.view.frame = frame;
 }
 
